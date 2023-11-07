@@ -1,7 +1,6 @@
 import { tv, type VariantProps } from "tailwind-variants";
-
+import { twMerge } from 'tailwind-merge';
 export const button = tv({
-    base: "px-4 py-1.5 rounded-full hover:opacity-80",
     variants: {
         type: {
             square: 'rounded-none bg-gray-500 text-white hover:bg-gray-700',
@@ -18,5 +17,5 @@ export interface ButtonProps extends ButtonVariants {
 }
 
 export const Button = (props: ButtonProps) => {
-    return <button className={button(props)}>{props.children}</button>;
+    return <button className={twMerge(button(props), "px-4 py-1.5 rounded-full hover:opacity-80")}>{props.children}</button>;
 };
