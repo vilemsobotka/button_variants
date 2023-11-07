@@ -17,5 +17,5 @@ export interface ButtonProps extends ButtonVariants {
 }
 
 export const Button = (props: ButtonProps) => {
-    return <button className={twMerge(button(props), "px-4 py-1.5 rounded-full hover:opacity-80")}>{props.children}</button>;
+    return <button className={twMerge("px-4 py-1.5 rounded-full hover:opacity-80", button(props))}>{props.children}</button>;
 };
